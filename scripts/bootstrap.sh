@@ -18,6 +18,28 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
 	RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
+echo "Installing core dev packages..."
+
+
+sudo apt update
+
+sudo apt install -y \
+	build-essential \
+	curl \
+ 	wget \
+	git \
+	unzip \
+	zip \
+	software-properties-common \
+	apt-transport-https \
+	ca-certificates \
+	gnupg \
+	lsb-release	
+
+echo "Setting up Git Quality of Life..."
+git config --global init.defaultBranch main
+git config --global pull.rebase false
+
 echo "Creating symlinks for dotfiles..."
 ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/zsh/.aliases ~/.aliases
