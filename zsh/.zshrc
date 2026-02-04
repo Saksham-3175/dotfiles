@@ -1,8 +1,16 @@
-# Load custom files
-[ -f ~/.aliases ] && source ~/.aliases
-[ -f ~/.exports ] && source ~/.exports
+# Path to Oh My Zsh
+export ZSH="$HOME/.oh-my-zsh"
 
-# Load Custom Config
+# Theme
+ZSH_THEME="robbyrussell"
+
+# Plugins
+plugins=(git z)
+
+# Load Oh My Zsh
+source $ZSH/oh-my-zsh.sh
+
+# Load custom dotfiles config
 DOTFILES="$HOME/dotfiles"
 source $DOTFILES/zsh/.aliases
 source $DOTFILES/zsh/.exports
@@ -14,9 +22,3 @@ setopt HIST_IGNORE_ALL_DUPS
 
 # Better Navigation
 setopt AUTO_CD
-
-#Prompt
-PROMPT='%n@%m:%~$ '
-
- 
-TEST_ZSHRC_LOADING
