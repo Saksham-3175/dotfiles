@@ -2,6 +2,11 @@
 [ -f ~/.aliases ] && source ~/.aliases
 [ -f ~/.exports ] && source ~/.exports
 
+# Load Custom Config
+DOTFILES="$HOME/dotfiles"
+source $DOTFILES/zsh/.aliases
+source $DOTFILES/zsh/.exports
+
 # History
 HISTSIZE=5000
 SAVEHIST=5000
@@ -14,3 +19,4 @@ setopt AUTO_CD
 PROMPT='%n@%m:%~$ '
 
  
+TEST_ZSHRC_LOADING
